@@ -1,0 +1,29 @@
+# Private key material
+*.key
+*.key.pem
+*.p12
+*.pfx
+
+# Passwords and secrets
+*.pass
+*.password
+*.password.txt
+*.secret
+*.secrets
+secrets/
+
+# CA runtime state
+db/
+.step/
+*.db
+
+# Backups and archives
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.bak
+
+# macOS
+.DS_Store
+

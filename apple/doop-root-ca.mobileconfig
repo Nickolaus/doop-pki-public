@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>PayloadContent</key>
+    <array>
+      <dict>
+        <key>PayloadCertificateFileName</key>
+        <string>doop-root-ca.crt</string>
+        <key>PayloadContent</key>
+        <data>
+        MIIBwDCCAWagAwIBAgIRAJX+2wxmSsRZ1QrAn4Ok6/AwCgYIKoZIzj0EAwIwPjEZMBcGA1UEChMQZG9vcCBpbnRlcm5hbCBjYTEhMB8GA1UEAxMYZG9vcCBpbnRlcm5hbCBjYSBSb290IENBMB4XDTI2MDQxMjExMjU1NloXDTM2MDQwOTExMjU1NlowPjEZMBcGA1UEChMQZG9vcCBpbnRlcm5hbCBjYTEhMB8GA1UEAxMYZG9vcCBpbnRlcm5hbCBjYSBSb290IENBMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEBBCAp4jSOZBe8XJ9LgfIEOhvSXIDvsrBD4Y+EaEaJBfcKAPuA3WvJ/9xAyS5vzkN0JdbHKtwrP1Qp9BVtnxJaqNFMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1UdEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYEFIBRYmRiIaWXIxF7c70L3ID1RMFXMAoGCCqGSM49BAMCA0gAMEUCIFS4ZuzsdQyayNo6PPKhJ85W2JyyTqY26M06I4viXsKHAiEA1GXVyBc8vcZZHeGUS4at7I01jUD5l/D6pSDIUXjBm+4=
+        </data>
+        <key>PayloadDescription</key>
+        <string>Installs the doop internal root CA.</string>
+        <key>PayloadDisplayName</key>
+        <string>doop Root CA</string>
+        <key>PayloadIdentifier</key>
+        <string>cc.doop.pki.root-ca.cert</string>
+        <key>PayloadType</key>
+        <string>com.apple.security.root</string>
+        <key>PayloadUUID</key>
+        <string>1B2FB3F1-AD70-4FA8-92D8-BE2F8C9500A1</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+      </dict>
+    </array>
+    <key>PayloadDescription</key>
+    <string>Installs the doop internal root CA on Apple devices.</string>
+    <key>PayloadDisplayName</key>
+    <string>doop Root CA</string>
+    <key>PayloadIdentifier</key>
+    <string>cc.doop.pki.root-ca.profile</string>
+    <key>PayloadOrganization</key>
+    <string>doop</string>
+    <key>PayloadRemovalDisallowed</key>
+    <false/>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>D9132A7A-728A-45A1-B3A0-159D5505A2E7</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+  </dict>
+</plist>
