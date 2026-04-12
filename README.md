@@ -2,26 +2,21 @@
 
 Public trust-distribution artifacts for the `doop` homelab PKI.
 
-This repository is intentionally narrow in scope. It is safe to publish only because it contains public trust material and client-distribution helpers, not signing material.
+This repository contains only public trust material and client-distribution helpers.
 
-## What belongs here
-- the public root CA certificate
-- client trust-install artifacts
-- generic operator documentation for trust distribution
-- certificate fingerprints and rotation notes
+For the publication boundary and what must never be committed here, see:
+- `SECURITY.md`
+- `docs/repository-scope.md`
 
-## What does not belong here
-- private keys of any kind
-- internal IP addresses
-- private hostnames or internal topology
-- server file paths
-- `/etc/hosts` workarounds
-- passwords, API keys, or encrypted blobs without a clear publication reason
-- restore notes that reveal private infrastructure layout
+## Purpose
+- distribute the public root CA certificate
+- provide per-platform trust-install artifacts
+- document safe client trust rollout
 
 ## Current contents
 - `certs/doop-root-ca.crt`
 - `apple/doop-root-ca.mobileconfig`
+- `android/install-notes.md`
 - `linux/install-root-ca-debian.sh`
 - `linux/install-root-ca-redhat.sh`
 - `windows/install-root-ca.ps1`
