@@ -1,0 +1,16 @@
+name: public-scope-guard
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Run public scope guard
+        run: python3 scripts/public_scope_guard.py

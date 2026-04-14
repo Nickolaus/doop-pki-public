@@ -1,0 +1,24 @@
+name: lint
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Shell syntax
+        run: |
+          bash -n linux/install-root-ca-debian.sh
+          bash -n linux/install-root-ca-redhat.sh
+      - name: PowerShell syntax
+        shell: pwsh
+        run: |
+          $null = [System.Management.Automation.Language.Parser]::ParseFile((Resolve-Path 'windows/install-root-ca.ps1'), [ref]$null, [ref]$null)
+      - name: Markdown link checks
+        run: python3 scripts/check_markdown_links.py
