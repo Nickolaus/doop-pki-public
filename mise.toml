@@ -1,0 +1,17 @@
+[tasks."scripts:inventory"]
+description = "Print registered public PKI script ownership and safety metadata"
+dir = "."
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+exec python3 ./scripts/checks/script_registry_check.py inventory
+'''
+
+[tasks."scripts:check"]
+description = "Validate registered public PKI scripts, syntax, and stale path references"
+dir = "."
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+exec python3 ./scripts/checks/script_registry_check.py check
+'''

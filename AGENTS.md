@@ -22,9 +22,9 @@ Start with [`README.md`](./README.md), [`SECURITY.md`](./SECURITY.md), and [`doc
 
 ## Checks
 
-- Markdown links: `python3 scripts/check_markdown_links.py`
-- Artifact consistency: `python3 scripts/check_artifacts.py`
-- Public-scope guard: `python3 scripts/public_scope_guard.py`
+- Markdown links: `python3 scripts/checks/check_markdown_links.py`
+- Artifact consistency: `python3 scripts/artifacts/check_artifacts.py`
+- Public-scope guard: `python3 scripts/policy/public_scope_guard.py`
 - Shell syntax for Linux scripts and PowerShell parser checks are also run in GitHub Actions.
 
 ## Editing Rules

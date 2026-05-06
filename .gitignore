@@ -27,3 +27,6 @@ db/
 # macOS
 .DS_Store
 
+# Python validation cache
+__pycache__/
+*.py[cod]

@@ -7,7 +7,7 @@ import subprocess
 import sys
 
 
-REPO_ROOT = pathlib.Path(__file__).resolve().parents[1]
+REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 
 TEXT_EXTENSIONS = {
     ".md",
@@ -72,7 +72,7 @@ def main() -> int:
             continue
 
         for pattern, reason in FORBIDDEN_PATTERNS:
-            if rel == pathlib.Path("scripts/public_scope_guard.py") and reason in {
+            if rel == pathlib.Path("scripts/policy/public_scope_guard.py") and reason in {
                 "local workstation path",
                 "credential-like assignment",
                 "private hostname",

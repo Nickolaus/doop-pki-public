@@ -1,0 +1,55 @@
+schema: doop.scripts.registry.v1
+last_verified: 2026-05-06
+owner: doop-pki-public
+rules:
+  public_interface: mise tasks are stable; script paths are internal unless called by runtime config
+  shellcheck: error severity is enforced when shellcheck is installed
+scripts:
+- id: scripts-artifacts-check_artifacts-py
+  path: scripts/artifacts/check_artifacts.py
+  old_path: scripts/check_artifacts.py
+  owner: doop-pki-public
+  language: python
+  script_type: artifact_check
+  safety: read_only
+  public_interface: mise run scripts:check or GitHub Actions
+  called_by: [mise.toml, .github/workflows]
+  truth_source: nearest AGENTS.md, mise.toml, and authoritative config for the subsystem
+  validation: scripts:check
+  status: active
+- id: scripts-checks-check_markdown_links-py
+  path: scripts/checks/check_markdown_links.py
+  old_path: scripts/check_markdown_links.py
+  owner: doop-pki-public
+  language: python
+  script_type: check
+  safety: read_only
+  public_interface: mise run scripts:check or GitHub Actions
+  called_by: [mise.toml, .github/workflows]
+  truth_source: nearest AGENTS.md, mise.toml, and authoritative config for the subsystem
+  validation: scripts:check
+  status: active
+- id: scripts-checks-script_registry_check-py
+  path: scripts/checks/script_registry_check.py
+  old_path: 
+  owner: doop-pki-public
+  language: python
+  script_type: check
+  safety: read_only
+  public_interface: mise run scripts:check
+  called_by: [mise.toml, .github/workflows]
+  truth_source: nearest AGENTS.md, mise.toml, and authoritative config for the subsystem
+  validation: scripts:check
+  status: active
+- id: scripts-policy-public_scope_guard-py
+  path: scripts/policy/public_scope_guard.py
+  old_path: scripts/public_scope_guard.py
+  owner: doop-pki-public
+  language: python
+  script_type: policy_check
+  safety: read_only
+  public_interface: mise run scripts:check or GitHub Actions
+  called_by: [mise.toml, .github/workflows]
+  truth_source: nearest AGENTS.md, mise.toml, and authoritative config for the subsystem
+  validation: scripts:check
+  status: active

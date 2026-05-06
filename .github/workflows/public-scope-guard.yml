@@ -13,4 +13,4 @@ jobs:
         with:
           python-version: "3.x"
       - name: Run public scope guard
-        run: python3 scripts/public_scope_guard.py
+        run: python3 scripts/policy/public_scope_guard.py

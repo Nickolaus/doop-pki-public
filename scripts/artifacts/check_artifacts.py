@@ -9,7 +9,7 @@ import subprocess
 import sys
 
 
-REPO_ROOT = pathlib.Path(__file__).resolve().parents[1]
+REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 CERT_PATH = REPO_ROOT / "certs" / "doop-root-ca.crt"
 README_PATH = REPO_ROOT / "README.md"
 MOBILECONFIG_PATH = REPO_ROOT / "apple" / "doop-root-ca.mobileconfig"

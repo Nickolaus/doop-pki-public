@@ -21,4 +21,4 @@ jobs:
         run: |
           $null = [System.Management.Automation.Language.Parser]::ParseFile((Resolve-Path 'windows/install-root-ca.ps1'), [ref]$null, [ref]$null)
       - name: Markdown link checks
-        run: python3 scripts/check_markdown_links.py
+        run: python3 scripts/checks/check_markdown_links.py

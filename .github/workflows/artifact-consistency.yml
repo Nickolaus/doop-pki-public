@@ -13,4 +13,4 @@ jobs:
         with:
           python-version: "3.x"
       - name: Run artifact consistency checks
-        run: python3 scripts/check_artifacts.py
+        run: python3 scripts/artifacts/check_artifacts.py
