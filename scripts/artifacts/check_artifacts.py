@@ -22,6 +22,12 @@ def run(*args: str) -> str:
     return result.stdout.strip()
 
 
+def normalize_subject(value: str) -> str:
+    value = re.sub(r"\s*=\s*", "=", value.strip())
+    value = re.sub(r"\s*,\s*", ", ", value)
+    return value
+
+
 def main() -> int:
     failures: list[str] = []
 
@@ -54,7 +60,7 @@ def main() -> int:
     else:
         documented_subject = subject_match.group(1).strip()
         actual_subject = openssl_subject.split("subject=", 1)[1].strip()
-        if documented_subject != actual_subject:
+        if normalize_subject(documented_subject) != normalize_subject(actual_subject):
             failures.append("README.md: subject does not match certs/doop-root-ca.crt")
 
     validity_match = re.search(r"Valid until:\s*`([^`]+)`", readme)
