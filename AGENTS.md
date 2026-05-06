@@ -19,6 +19,7 @@ Start with [`README.md`](./README.md), [`SECURITY.md`](./SECURITY.md), and [`doc
 - Apple profile artifact: [`apple/doop-root-ca.mobileconfig`](./apple/doop-root-ca.mobileconfig).
 - Publication boundary: [`docs/reference/repository-scope.md`](./docs/reference/repository-scope.md).
 - Publication workflow: [`docs/operations/publication-process.md`](./docs/operations/publication-process.md).
+- Dependency updates: Renovate manages GitHub Actions only in this public repo; publication artifacts remain operator-owned.
 
 ## Checks
 

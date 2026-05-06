@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":dependencyDashboard", ":semanticCommits"],
+  "timezone": "Europe/Berlin",
+  "schedule": ["before 8am on monday"],
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 3,
+  "branchConcurrentLimit": 3,
+  "automerge": false,
+  "dependencyDashboardTitle": "Dependency Dashboard",
+  "labels": ["dependencies", "renovate"],
+  "includePaths": [".github/workflows/**"],
+  "enabledManagers": ["github-actions"],
+  "packageRules": [
+    {
+      "description": "Keep public PKI CI action updates low risk and separate.",
+      "matchManagers": ["github-actions"],
+      "groupName": "github actions",
+      "addLabels": ["risk:low", "ci"]
+    },
+    {
+      "description": "Manual dashboard approval for all major updates.",
+      "matchUpdateTypes": ["major"],
+      "dependencyDashboardApproval": true,
+      "addLabels": ["risk:high"]
+    }
+  ]
+}
