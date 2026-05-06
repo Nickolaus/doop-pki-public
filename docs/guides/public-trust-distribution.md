@@ -1,3 +1,11 @@
+---
+doc_type: runbook
+canonical_for: public_trust_distribution
+truth_source: doop-pki-public/certs/doop-root-ca.crt and public-safe install artifacts
+last_verified: 2026-05-06
+status: active
+---
+
 # Public Trust Distribution
 
 This document describes how to distribute the public root CA to managed clients safely.
@@ -72,12 +80,12 @@ $cert="$env:TEMP\doop-root-ca.crt"; Invoke-WebRequest https://raw.githubusercont
 ```
 
 ## Client Guidance Index
-- Client trust matrix: `docs/client-trust-matrix.md`
-- Browser-specific behavior: `docs/browser-interop.md`
-- Non-browser runtimes: `docs/non-browser-clients.md`
-- Verification and troubleshooting: `docs/verification-and-troubleshooting.md`
-- Rotation and lifecycle: `docs/rotation-and-lifecycle.md`
-- Publication/update process: `docs/publication-process.md`
+- Client trust matrix: `docs/reference/client-trust-matrix.md`
+- Browser-specific behavior: `docs/reference/browser-interop.md`
+- Non-browser runtimes: `docs/reference/non-browser-clients.md`
+- Verification and troubleshooting: `docs/operations/verification-and-troubleshooting.md`
+- Rotation and lifecycle: `docs/operations/rotation-and-lifecycle.md`
+- Publication/update process: `docs/operations/publication-process.md`
 
 ## Rotation guidance
 When the root certificate changes:

@@ -1,3 +1,11 @@
+---
+doc_type: reference
+canonical_for: non_browser_clients
+truth_source: doop-pki-public/certs/doop-root-ca.crt and public-safe install artifacts
+last_verified: 2026-05-06
+status: active
+---
+
 # Non-Browser Clients
 
 Many trust failures happen after the browser path is already working. That usually means the certificate is fine, but the runtime does not inherit the same trust path as the browser or OS.
@@ -75,9 +83,9 @@ Common issue:
 
 ## Related Docs
 
-- `docs/client-trust-matrix.md`
-- `docs/verification-and-troubleshooting.md`
-- `docs/rotation-and-lifecycle.md`
+- `docs/reference/client-trust-matrix.md`
+- `docs/operations/verification-and-troubleshooting.md`
+- `docs/operations/rotation-and-lifecycle.md`
 
 ## References
 

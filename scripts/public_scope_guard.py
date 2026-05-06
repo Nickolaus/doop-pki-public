@@ -36,15 +36,15 @@ FORBIDDEN_PATTERNS = [
 FORBIDDEN_PATH_SUFFIXES = {".p12", ".pfx", ".key", ".key.pem", ".password", ".password.txt", ".secret"}
 
 
-def tracked_files() -> list[pathlib.Path]:
+def candidate_files() -> list[pathlib.Path]:
     result = subprocess.run(
-        ["git", "ls-files"],
+        ["git", "ls-files", "--cached", "--others", "--exclude-standard"],
         cwd=REPO_ROOT,
         check=True,
         capture_output=True,
         text=True,
     )
-    return [REPO_ROOT / line for line in result.stdout.splitlines() if line]
+    return [REPO_ROOT / line for line in result.stdout.splitlines() if line and (REPO_ROOT / line).is_file()]
 
 
 def is_text_candidate(path: pathlib.Path) -> bool:
@@ -55,7 +55,7 @@ def is_text_candidate(path: pathlib.Path) -> bool:
 def main() -> int:
     failures: list[str] = []
 
-    for path in tracked_files():
+    for path in candidate_files():
         rel = path.relative_to(REPO_ROOT)
         suffixes = "".join(path.suffixes[-2:]) if len(path.suffixes) >= 2 else path.suffix
         if path.suffix in FORBIDDEN_PATH_SUFFIXES or suffixes in FORBIDDEN_PATH_SUFFIXES:

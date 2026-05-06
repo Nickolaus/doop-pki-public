@@ -1,3 +1,11 @@
+---
+doc_type: runbook
+canonical_for: android_trust
+truth_source: doop-pki-public/certs/doop-root-ca.crt and public-safe install artifacts
+last_verified: 2026-05-06
+status: active
+---
+
 # Android Trust Notes
 
 Android needs separate handling from Apple, Windows, and Linux.
@@ -35,9 +43,9 @@ Avoid manual install on:
 
 ## Related Docs
 
-- `docs/client-trust-matrix.md`
-- `docs/non-browser-clients.md`
-- `docs/verification-and-troubleshooting.md`
+- `docs/reference/client-trust-matrix.md`
+- `docs/reference/non-browser-clients.md`
+- `docs/operations/verification-and-troubleshooting.md`
 
 ## References
 

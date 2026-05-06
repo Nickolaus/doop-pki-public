@@ -1,3 +1,11 @@
+---
+doc_type: runbook
+canonical_for: rotation_and_lifecycle
+truth_source: doop-pki-public/certs/doop-root-ca.crt and public-safe install artifacts
+last_verified: 2026-05-06
+status: active
+---
+
 # Rotation and Lifecycle
 
 This repository publishes the public trust anchor and the client-side material needed to consume it safely.
@@ -51,6 +59,6 @@ Avoid:
 
 ## Related Docs
 
-- `docs/publication-process.md`
-- `docs/public-trust-distribution.md`
-- `docs/verification-and-troubleshooting.md`
+- `docs/operations/publication-process.md`
+- `docs/guides/public-trust-distribution.md`
+- `docs/operations/verification-and-troubleshooting.md`

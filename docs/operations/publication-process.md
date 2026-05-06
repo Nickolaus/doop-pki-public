@@ -1,3 +1,11 @@
+---
+doc_type: runbook
+canonical_for: publication_process
+truth_source: doop-pki-public/certs/doop-root-ca.crt and public-safe install artifacts
+last_verified: 2026-05-06
+status: active
+---
+
 # Publication Process
 
 Use this process whenever the public trust material changes.
@@ -48,6 +56,6 @@ Release notes should not mention:
 ## Related Docs
 
 - `SECURITY.md`
-- `docs/repository-scope.md`
-- `docs/public-trust-distribution.md`
-- `docs/rotation-and-lifecycle.md`
+- `docs/reference/repository-scope.md`
+- `docs/guides/public-trust-distribution.md`
+- `docs/operations/rotation-and-lifecycle.md`

@@ -1,3 +1,11 @@
+---
+doc_type: reference
+canonical_for: repository_scope
+truth_source: doop-pki-public/certs/doop-root-ca.crt and public-safe install artifacts
+last_verified: 2026-05-06
+status: active
+---
+
 # Repository Scope
 
 This repository exists to distribute public PKI trust material safely and document how modern clients should trust and consume it.

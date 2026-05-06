@@ -6,7 +6,7 @@ This repository is intentionally public-safe. It contains only the material a cl
 
 For the publication boundary and what must never be committed here, see:
 - `SECURITY.md`
-- `docs/repository-scope.md`
+- [`docs/reference/repository-scope.md`](docs/reference/repository-scope.md)
 
 ## Purpose
 - distribute the public root CA certificate
@@ -31,23 +31,24 @@ Do not distribute this root CA broadly to:
 
 ## Canonical Public Interfaces
 - `certs/doop-root-ca.crt`
-- `apple/install-notes.md`
+- `docs/README.md`
+- `docs/guides/apple-install.md`
 - `apple/doop-root-ca.mobileconfig`
-- `android/install-notes.md`
-- `linux/install-notes.md`
+- `docs/guides/android-trust.md`
+- `docs/guides/linux-install.md`
 - `linux/install-root-ca-debian.sh`
 - `linux/install-root-ca-redhat.sh`
 - `windows/install-root-ca.ps1`
 - `windows/install-root-ca-certutil.cmd`
-- `windows/gpo-deployment-notes.md`
-- `docs/client-trust-matrix.md`
-- `docs/browser-interop.md`
-- `docs/non-browser-clients.md`
-- `docs/verification-and-troubleshooting.md`
-- `docs/rotation-and-lifecycle.md`
-- `docs/publication-process.md`
-- `docs/public-trust-distribution.md`
-- `docs/repository-scope.md`
+- `docs/guides/windows-gpo-deployment.md`
+- `docs/reference/client-trust-matrix.md`
+- `docs/reference/browser-interop.md`
+- `docs/reference/non-browser-clients.md`
+- `docs/operations/verification-and-troubleshooting.md`
+- `docs/operations/rotation-and-lifecycle.md`
+- `docs/operations/publication-process.md`
+- `docs/guides/public-trust-distribution.md`
+- `docs/reference/repository-scope.md`
 - `SECURITY.md`
 
 ## Root Certificate
@@ -116,11 +117,11 @@ powershell -NoProfile -Command "$cert='$env:TEMP\\doop-root-ca.crt'; Invoke-WebR
 ```
 
 ## Start Here
-1. Read `docs/public-trust-distribution.md`.
-2. Check `docs/client-trust-matrix.md` for your client class.
+1. Read [`docs/guides/public-trust-distribution.md`](docs/guides/public-trust-distribution.md).
+2. Check [`docs/reference/client-trust-matrix.md`](docs/reference/client-trust-matrix.md) for your client class.
 3. Use the platform-native install artifact or deployment path.
 4. Verify the fingerprint before trusting the root.
-5. If trust still fails, use `docs/browser-interop.md`, `docs/non-browser-clients.md`, and `docs/verification-and-troubleshooting.md`.
+5. If trust still fails, use [`docs/reference/browser-interop.md`](docs/reference/browser-interop.md), [`docs/reference/non-browser-clients.md`](docs/reference/non-browser-clients.md), and [`docs/operations/verification-and-troubleshooting.md`](docs/operations/verification-and-troubleshooting.md).
 
 ## Important Notes
 - The root certificate is public by design; broad trust is not.

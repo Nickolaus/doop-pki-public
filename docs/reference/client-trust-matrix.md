@@ -1,3 +1,11 @@
+---
+doc_type: reference
+canonical_for: client_trust_matrix
+truth_source: doop-pki-public/certs/doop-root-ca.crt and public-safe install artifacts
+last_verified: 2026-05-06
+status: active
+---
+
 # Client Trust Matrix
 
 Use this matrix to decide how a client should trust the public root CA and what extra steps may still be required after OS trust is installed.
@@ -52,9 +60,9 @@ Use this matrix to decide how a client should trust the public root CA and what 
 
 ## Related Docs
 
-- `docs/browser-interop.md`
-- `docs/non-browser-clients.md`
-- `docs/verification-and-troubleshooting.md`
+- `docs/reference/browser-interop.md`
+- `docs/reference/non-browser-clients.md`
+- `docs/operations/verification-and-troubleshooting.md`
 
 ## References
 

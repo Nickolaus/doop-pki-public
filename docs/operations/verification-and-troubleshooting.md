@@ -1,3 +1,11 @@
+---
+doc_type: runbook
+canonical_for: verification_and_troubleshooting
+truth_source: doop-pki-public/certs/doop-root-ca.crt and public-safe install artifacts
+last_verified: 2026-05-06
+status: active
+---
+
 # Verification and Troubleshooting
 
 Use this guide when trust installation appears correct but HTTPS still fails.
@@ -78,6 +86,6 @@ Do not reissue just because one client type fails before verifying its trust pat
 
 ## Related Docs
 
-- `docs/browser-interop.md`
-- `docs/non-browser-clients.md`
-- `docs/client-trust-matrix.md`
+- `docs/reference/browser-interop.md`
+- `docs/reference/non-browser-clients.md`
+- `docs/reference/client-trust-matrix.md`

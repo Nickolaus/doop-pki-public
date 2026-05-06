@@ -1,3 +1,11 @@
+---
+doc_type: reference
+canonical_for: browser_interop
+truth_source: doop-pki-public/certs/doop-root-ca.crt and public-safe install artifacts
+last_verified: 2026-05-06
+status: active
+---
+
 # Browser Interoperability
 
 Browser success is a useful signal, but it is not a universal proof that every client trusts the CA correctly.
@@ -52,9 +60,9 @@ If Chrome succeeds but Firefox fails:
 
 ## Related Docs
 
-- `docs/client-trust-matrix.md`
-- `docs/verification-and-troubleshooting.md`
-- `docs/non-browser-clients.md`
+- `docs/reference/client-trust-matrix.md`
+- `docs/operations/verification-and-troubleshooting.md`
+- `docs/reference/non-browser-clients.md`
 
 ## References
 

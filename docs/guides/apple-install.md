@@ -1,3 +1,11 @@
+---
+doc_type: runbook
+canonical_for: apple_install
+truth_source: doop-pki-public/certs/doop-root-ca.crt and public-safe install artifacts
+last_verified: 2026-05-06
+status: active
+---
+
 # Apple Install Notes
 
 Use the Apple configuration profile in this repository as the preferred public artifact for Apple device trust deployment.
@@ -37,8 +45,8 @@ This path installs the root into the macOS system keychain directly. Prefer MDM 
 
 ## Related Docs
 
-- `docs/client-trust-matrix.md`
-- `docs/verification-and-troubleshooting.md`
+- `docs/reference/client-trust-matrix.md`
+- `docs/operations/verification-and-troubleshooting.md`
 
 ## References
 

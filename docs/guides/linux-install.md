@@ -1,3 +1,11 @@
+---
+doc_type: runbook
+canonical_for: linux_install
+truth_source: doop-pki-public/certs/doop-root-ca.crt and public-safe install artifacts
+last_verified: 2026-05-06
+status: active
+---
+
 # Linux Install Notes
 
 For most Linux distributions, the right approach is to install the root CA into the system trust store and then refresh the trust database.
@@ -36,6 +44,6 @@ If `curl` still fails:
 
 ## Related Docs
 
-- `docs/client-trust-matrix.md`
-- `docs/non-browser-clients.md`
-- `docs/verification-and-troubleshooting.md`
+- `docs/reference/client-trust-matrix.md`
+- `docs/reference/non-browser-clients.md`
+- `docs/operations/verification-and-troubleshooting.md`
