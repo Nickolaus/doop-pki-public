@@ -8,9 +8,11 @@ status: active
 
 # Public PKI Documentation
 
-This directory contains public-safe documentation for distributing and validating the `doop` internal root CA certificate.
+This directory contains public-safe documentation for distributing and validating the `doop` internal root CA certificate on operator devices and managed runtimes that directly call private internal HTTPS services.
 
 Private CA operations, internal topology, service inventory, and private key material stay out of this repository.
+
+Household, guest, and normal family devices should use public-trusted browser aliases where available and should not install this root by default.
 
 ## Guides
 

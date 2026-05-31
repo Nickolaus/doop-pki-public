@@ -8,7 +8,10 @@ status: active
 
 # Client Trust Matrix
 
-Use this matrix to decide how a client should trust the public root CA and what extra steps may still be required after OS trust is installed.
+Use this matrix to decide how an operator device or managed runtime should trust the public root CA and what extra steps may still be required after OS trust is installed. Do not use it as a default household onboarding matrix.
+
+Family, guest, and ordinary personal devices should use public-trusted
+`home.hessel.app` aliases where available instead of installing this root.
 
 ## Browser Clients
 
@@ -28,7 +31,7 @@ Use this matrix to decide how a client should trust the public root CA and what 
 | Windows | Usually yes | Firefox or Java may differ | Intune trusted cert profile, GPO, or LocalMachine import script | `certlm.msc` or `certutil -store Root` | Root imported to CurrentUser when machine trust was needed |
 | Debian / Ubuntu | Usually yes | Containers and Java may differ | `update-ca-certificates` via script or config management | `openssl verify` or `curl -v` | Cert copied outside the system CA path or trust store not refreshed |
 | RHEL / Fedora | Usually yes | Containers and Java may differ | `update-ca-trust extract` via script or config management | `trust list` or `curl -v` | Cert placed outside the anchor directory or trust store not rebuilt |
-| Android | Sometimes | Often | Managed deployment preferred; manual install only when justified | Browser test plus target-app test | App trusts only system anchors or enforces its own trust policy |
+| Android | Sometimes | Often | Managed deployment preferred; manual install only when an operator workflow requires it | Browser test plus target-app test | App trusts only system anchors or enforces its own trust policy |
 
 ## Non-Browser Clients
 
@@ -49,7 +52,7 @@ Use this matrix to decide how a client should trust the public root CA and what 
 | Windows unmanaged admin machine | PowerShell or `certutil` fallback |
 | Debian / Ubuntu | Config management or `linux/install-root-ca-debian.sh` |
 | RHEL / Fedora | Config management or `linux/install-root-ca-redhat.sh` |
-| Android | Managed deployment where possible; manual install only when required |
+| Android | Managed deployment where possible; manual install only for explicit operator/runtime need |
 
 ## Practical Defaults
 
@@ -57,6 +60,7 @@ Use this matrix to decide how a client should trust the public root CA and what 
 - If a browser works but an app fails, treat that as an application trust problem, not proof that the certificate is wrong.
 - Prefer managed trust deployment over manual one-off import.
 - Prefer machine-wide trust for shared admin devices when appropriate.
+- Prefer public-trusted browser aliases over private-root installation for non-operator devices.
 
 ## Related Docs
 

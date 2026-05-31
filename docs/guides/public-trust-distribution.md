@@ -11,20 +11,25 @@ status: active
 This document describes how to distribute the public root CA to managed clients safely.
 
 ## Principle
-The root certificate is public by design. Distributing it is safe. Trusting it should still be limited to managed clients that need to access internal HTTPS services.
+The root certificate is public by design. Distributing it is safe. Trusting it should still be limited to operator devices and managed runtimes that need to access private internal HTTPS services directly.
 
 ## Recommended device classes
 - admin macOS devices
 - admin Windows devices
 - admin Linux devices
-- managed mobile devices when required
+- managed mobile devices only when required
 - container or node runtimes that must call internal HTTPS services
 
 ## Device classes to avoid by default
+- household or family devices that use public-trusted browser aliases
 - guest devices
 - unmanaged personal devices
 - most IoT devices
 - clients that do not need to reach internal HTTPS services
+
+Human-facing `*.home.hessel.app` aliases should present public-trusted
+certificates. Those devices should not need this private root unless they also
+serve as operator devices.
 
 ## Best-practice distribution model
 Use platform-native trust deployment:

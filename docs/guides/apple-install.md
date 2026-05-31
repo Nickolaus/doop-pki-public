@@ -8,7 +8,7 @@ status: active
 
 # Apple Install Notes
 
-Use the Apple configuration profile in this repository as the preferred public artifact for Apple device trust deployment.
+Use the Apple configuration profile in this repository as the preferred public artifact for Apple operator-device or managed-runtime trust deployment.
 
 ## Preferred Deployment Paths
 
@@ -24,6 +24,9 @@ After installing the profile:
 - confirm the profile appears in device management settings
 - on platforms that require it, ensure the installed root is trusted for SSL
 - test browser access to an intended internal HTTPS service
+
+Do not install this profile on household, guest, or ordinary personal Apple
+devices that only use public-trusted `home.hessel.app` aliases.
 
 ## Platform Caveat
 

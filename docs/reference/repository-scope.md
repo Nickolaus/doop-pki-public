@@ -8,14 +8,14 @@ status: active
 
 # Repository Scope
 
-This repository exists to distribute public PKI trust material safely and document how modern clients should trust and consume it.
+This repository exists to distribute public PKI trust material safely and document how operator devices and managed runtimes should trust and consume it.
 
 ## Safe to publish
 - public root certificate
 - intermediate certificates if needed for client trust chains
 - platform install artifacts
 - fingerprint documentation
-- generic onboarding instructions
+- generic operator/runtime onboarding instructions
 - generic client interoperability notes
 - generic verification and troubleshooting guidance
 - generic rotation and publication guidance
@@ -49,5 +49,9 @@ Keep this repository focused on client-side questions:
 - how to verify trust
 - how to troubleshoot trust failures
 - how to handle rotation safely
+
+Do not turn this repository into household end-user documentation. Normal
+family-facing services should use public-trusted aliases and should not require
+private-root installation.
 
 Keep private CA operations, topology, and service inventory elsewhere.

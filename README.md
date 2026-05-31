@@ -1,8 +1,8 @@
 # doop-pki-public
 
-Public trust-distribution and client interoperability artifacts for the `doop` internal PKI.
+Public-safe operator and runtime trust-distribution artifacts for the `doop` internal PKI.
 
-This repository is intentionally public-safe. It contains only the material a client needs to trust and consume the public root CA correctly, plus generic platform guidance for installing, verifying, troubleshooting, and maintaining that trust.
+This repository is intentionally public-safe. It contains only the material an operator device or managed runtime needs to trust and consume the public root CA correctly, plus generic platform guidance for installing, verifying, troubleshooting, and maintaining that trust.
 
 For the publication boundary and what must never be committed here, see:
 - `SECURITY.md`
@@ -10,20 +10,21 @@ For the publication boundary and what must never be committed here, see:
 
 ## Purpose
 - distribute the public root CA certificate
-- provide stable platform-specific trust-install artifacts
+- provide stable platform-specific trust-install artifacts for operator and managed-runtime clients
 - document modern client interoperability expectations
 - document verification, troubleshooting, and rotation guidance
 
 ## Who Should Use This Repo
-Use this repository for managed clients that must trust internal HTTPS services:
+Use this repository for managed clients that must directly trust private internal HTTPS services:
 - admin workstations
 - managed servers
 - managed browsers
-- managed mobile devices where required
+- managed mobile devices only where required
 - container or node runtimes that must call internal HTTPS services
 
 ## Who Should Not Use This Repo By Default
 Do not distribute this root CA broadly to:
+- household or family devices that use public-trusted `home.hessel.app` aliases
 - guest devices
 - unmanaged personal devices
 - most IoT devices
@@ -125,6 +126,7 @@ powershell -NoProfile -Command "$cert='$env:TEMP\\doop-root-ca.crt'; Invoke-WebR
 
 ## Important Notes
 - The root certificate is public by design; broad trust is not.
+- Human-facing `*.home.hessel.app` aliases should work with public-trusted certificates and should not require this root.
 - Browser success does not prove that every app trusts the CA.
 - Some runtimes, especially Java, Firefox, containers, and mobile apps, may need additional trust configuration beyond OS trust.
 - This repository deliberately avoids publishing internal hostnames, internal IPs, private topology, or service inventory.

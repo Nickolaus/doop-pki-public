@@ -11,7 +11,7 @@ status: active
 Android needs separate handling from Apple, Windows, and Linux.
 
 ## Current recommendation
-Only install the internal root CA on managed Android devices that actually need to access internal HTTPS services.
+Only install the internal root CA on managed Android devices that actually need to access private internal HTTPS services for an operator workflow.
 
 ## Important platform behavior
 On modern Android, user-installed CA certificates are not automatically trusted by all apps.
@@ -37,6 +37,7 @@ After installing the root CA:
 ## When Android Is A Bad Fit
 
 Avoid manual install on:
+- household or family devices that only use public-trusted browser aliases
 - unmanaged personal devices
 - devices that do not actually need internal HTTPS access
 - devices where the target app is known to trust only system anchors
