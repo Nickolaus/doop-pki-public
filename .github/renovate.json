@@ -3,7 +3,6 @@
   "extends": [
     "config:recommended",
     "helpers:pinGitHubActionDigests",
-    ":dependencyDashboard",
     ":semanticCommits"
   ],
   "timezone": "Europe/Berlin",
@@ -12,6 +11,7 @@
   "prConcurrentLimit": 3,
   "branchConcurrentLimit": 3,
   "automerge": false,
+  "configMigration": true,
   "dependencyDashboardTitle": "Dependency Dashboard",
   "labels": ["dependencies", "renovate"],
   "includePaths": [".github/workflows/**"],
