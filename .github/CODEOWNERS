@@ -1,0 +1,12 @@
+* @Nickolaus
+
+.github/** @Nickolaus
+.github/renovate.json @Nickolaus
+scripts/** @Nickolaus
+certs/** @Nickolaus
+apple/** @Nickolaus
+linux/** @Nickolaus
+windows/** @Nickolaus
+docs/** @Nickolaus
+README.md @Nickolaus
+SECURITY.md @Nickolaus
