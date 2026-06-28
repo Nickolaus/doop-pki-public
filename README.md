@@ -1,132 +1,31 @@
 # doop-pki-public
 
-Public-safe operator and runtime trust-distribution artifacts for the `doop` internal PKI.
+This repository is no longer maintained as an active trust-distribution
+channel.
 
-This repository is intentionally public-safe. It contains only the material an operator device or managed runtime needs to trust and consume the public root CA correctly, plus generic platform guidance for installing, verifying, troubleshooting, and maintaining that trust.
+The active trust anchor is now managed through an operator-owned private
+operations repository. Do not add new clients, automation, documentation, or
+deployment workflows that depend on this public repository.
 
-For the publication boundary and what must never be committed here, see:
-- `SECURITY.md`
-- [`docs/reference/repository-scope.md`](docs/reference/repository-scope.md)
+## Existing Artifact
 
-## Purpose
-- distribute the public root CA certificate
-- provide stable platform-specific trust-install artifacts for operator and managed-runtime clients
-- document modern client interoperability expectations
-- document verification, troubleshooting, and rotation guidance
+The existing public root certificate remains in this repository for consumers
+that already have an explicit dependency on it:
 
-## Who Should Use This Repo
-Use this repository for managed clients that must directly trust private internal HTTPS services:
-- admin workstations
-- managed servers
-- managed browsers
-- managed mobile devices only where required
-- container or node runtimes that must call internal HTTPS services
-
-## Who Should Not Use This Repo By Default
-Do not distribute this root CA broadly to:
-- household or family devices that use public-trusted `home.hessel.app` aliases
-- guest devices
-- unmanaged personal devices
-- most IoT devices
-- public internet clients
-
-## Canonical Public Interfaces
-- `certs/doop-root-ca.crt`
-- `docs/README.md`
-- `docs/guides/apple-install.md`
-- `apple/doop-root-ca.mobileconfig`
-- `docs/guides/android-trust.md`
-- `docs/guides/linux-install.md`
-- `linux/install-root-ca-debian.sh`
-- `linux/install-root-ca-redhat.sh`
-- `windows/install-root-ca.ps1`
-- `windows/install-root-ca-certutil.cmd`
-- `docs/guides/windows-gpo-deployment.md`
-- `docs/reference/client-trust-matrix.md`
-- `docs/reference/browser-interop.md`
-- `docs/reference/non-browser-clients.md`
-- `docs/operations/verification-and-troubleshooting.md`
-- `docs/operations/rotation-and-lifecycle.md`
-- `docs/operations/publication-process.md`
-- `docs/guides/public-trust-distribution.md`
-- `docs/reference/repository-scope.md`
-- `SECURITY.md`
-
-## Root Certificate
+- Artifact: `certs/doop-root-ca.crt`
 - Subject: `O=doop internal ca, CN=doop internal ca Root CA`
-- SHA-256 fingerprint: `BB:9B:B1:83:DC:54:A0:90:71:9E:5C:23:EA:9F:4F:C2:62:0C:F3:B8:BA:3B:AC:A0:6A:59:E0:F6:AF:2D:CC:A0`
+- SHA-256 fingerprint:
+  `BB:9B:B1:83:DC:54:A0:90:71:9E:5C:23:EA:9F:4F:C2:62:0C:F3:B8:BA:3B:AC:A0:6A:59:E0:F6:AF:2D:CC:A0`
 - Valid until: `Apr  9 11:25:56 2036 GMT`
 
-## Direct Download
+The root certificate is public by design. Broad trust deployment is not.
 
-Canonical public certificate URL:
+## Repository State
 
-`https://raw.githubusercontent.com/Nickolaus/doop-pki-public/main/certs/doop-root-ca.crt`
+This repository is retained as a read-only compatibility and audit reference.
+It is not the source for new public trust-distribution work, generic platform
+install guidance, managed-device onboarding, or automated dependency updates.
 
-Canonical Apple configuration profile URL:
-
-`https://raw.githubusercontent.com/Nickolaus/doop-pki-public/main/apple/doop-root-ca.mobileconfig`
-
-Fetch only:
-
-```sh
-curl -fsSLo doop-root-ca.crt https://raw.githubusercontent.com/Nickolaus/doop-pki-public/main/certs/doop-root-ca.crt
-```
-
-```sh
-wget -qO doop-root-ca.crt https://raw.githubusercontent.com/Nickolaus/doop-pki-public/main/certs/doop-root-ca.crt
-```
-
-## One-Line Install Commands
-
-Verify the fingerprint before broad trust deployment. These commands are intended for managed clients that already meet the trust policy described in this repository.
-
-### Debian / Ubuntu
-
-```sh
-curl -fsSL https://raw.githubusercontent.com/Nickolaus/doop-pki-public/main/certs/doop-root-ca.crt | sudo tee /usr/local/share/ca-certificates/doop-root-ca.crt >/dev/null && sudo update-ca-certificates
-```
-
-### macOS
-
-```sh
-curl -fsSL https://raw.githubusercontent.com/Nickolaus/doop-pki-public/main/certs/doop-root-ca.crt | sudo tee /tmp/doop-root-ca.crt >/dev/null && sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain /tmp/doop-root-ca.crt
-```
-
-### Apple Configuration Profile Download
-
-```sh
-curl -fsSLO https://raw.githubusercontent.com/Nickolaus/doop-pki-public/main/apple/doop-root-ca.mobileconfig
-```
-
-### RHEL / Fedora
-
-```sh
-curl -fsSL https://raw.githubusercontent.com/Nickolaus/doop-pki-public/main/certs/doop-root-ca.crt | sudo tee /etc/pki/ca-trust/source/anchors/doop-root-ca.crt >/dev/null && sudo update-ca-trust extract
-```
-
-### Windows PowerShell
-
-```powershell
-$cert="$env:TEMP\doop-root-ca.crt"; Invoke-WebRequest https://raw.githubusercontent.com/Nickolaus/doop-pki-public/main/certs/doop-root-ca.crt -OutFile $cert; Import-Certificate -FilePath $cert -CertStoreLocation Cert:\LocalMachine\Root
-```
-
-### Windows `certutil`
-
-```cmd
-powershell -NoProfile -Command "$cert='$env:TEMP\\doop-root-ca.crt'; Invoke-WebRequest https://raw.githubusercontent.com/Nickolaus/doop-pki-public/main/certs/doop-root-ca.crt -OutFile $cert" && certutil -addstore -f Root "%TEMP%\doop-root-ca.crt"
-```
-
-## Start Here
-1. Read [`docs/guides/public-trust-distribution.md`](docs/guides/public-trust-distribution.md).
-2. Check [`docs/reference/client-trust-matrix.md`](docs/reference/client-trust-matrix.md) for your client class.
-3. Use the platform-native install artifact or deployment path.
-4. Verify the fingerprint before trusting the root.
-5. If trust still fails, use [`docs/reference/browser-interop.md`](docs/reference/browser-interop.md), [`docs/reference/non-browser-clients.md`](docs/reference/non-browser-clients.md), and [`docs/operations/verification-and-troubleshooting.md`](docs/operations/verification-and-troubleshooting.md).
-
-## Important Notes
-- The root certificate is public by design; broad trust is not.
-- Human-facing `*.home.hessel.app` aliases should work with public-trusted certificates and should not require this root.
-- Browser success does not prove that every app trusts the CA.
-- Some runtimes, especially Java, Firefox, containers, and mobile apps, may need additional trust configuration beyond OS trust.
-- This repository deliberately avoids publishing internal hostnames, internal IPs, private topology, or service inventory.
+Security boundary remains unchanged: do not publish private keys, passwords,
+tokens, internal service inventory, private hostnames, local workstation paths,
+private topology, or other credential-like material here.
